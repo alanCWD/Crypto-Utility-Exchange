@@ -68,6 +68,10 @@
 
   --destructive-foreground: 0 0% 100%;
 
+  --success: 145 80% 42%;
+
+  --success-foreground: 0 0% 100%;
+
   --input: 220 15% 65%;
   --ring: 218 100% 50%;
   --chart-1: 218 100% 45%;
@@ -120,6 +124,10 @@
   /* Fallback for older browsers */
   --destructive-border: hsl(var(--destructive));
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --success-border: hsl(var(--success));
+  --success-border: hsl(from hsl(var(--success)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 .dark {
@@ -186,6 +194,10 @@
 
   --destructive-foreground: 0 0% 100%;
 
+  --success: 145 80% 42%;
+
+  --success-foreground: 0 0% 100%;
+
   --input: 15 5% 35%;
   --ring: 218 100% 50%;
   --chart-1: 218 100% 65%;
@@ -211,6 +223,7 @@
   --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --success-border: hsl(from hsl(var(--success)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 @layer base {
