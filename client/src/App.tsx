@@ -28,7 +28,7 @@ function Router() {
   );
 }
 
-export default function App() {
+function AppContent() {
   const { isAuthenticated, isLoading } = useAuth();
 
   // Custom sidebar width for trading application
@@ -37,28 +37,34 @@ export default function App() {
     "--sidebar-width-icon": "4rem",
   };
 
+  if (!isLoading && isAuthenticated) {
+    return (
+      <SidebarProvider style={sidebarStyle as React.CSSProperties}>
+        <div className="flex h-screen w-full">
+          <AppSidebar />
+          <div className="flex flex-col flex-1 overflow-hidden">
+            <header className="flex items-center justify-between h-14 px-4 border-b border-border bg-background sticky top-0 z-10">
+              <SidebarTrigger data-testid="button-sidebar-toggle" />
+              <ThemeToggle />
+            </header>
+            <main className="flex-1 overflow-auto">
+              <Router />
+            </main>
+          </div>
+        </div>
+      </SidebarProvider>
+    );
+  }
+
+  return <Router />;
+}
+
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
-          {!isLoading && isAuthenticated ? (
-            <SidebarProvider style={sidebarStyle as React.CSSProperties}>
-              <div className="flex h-screen w-full">
-                <AppSidebar />
-                <div className="flex flex-col flex-1 overflow-hidden">
-                  <header className="flex items-center justify-between h-14 px-4 border-b border-border bg-background sticky top-0 z-10">
-                    <SidebarTrigger data-testid="button-sidebar-toggle" />
-                    <ThemeToggle />
-                  </header>
-                  <main className="flex-1 overflow-auto">
-                    <Router />
-                  </main>
-                </div>
-              </div>
-            </SidebarProvider>
-          ) : (
-            <Router />
-          )}
+          <AppContent />
           <Toaster />
         </TooltipProvider>
       </ThemeProvider>

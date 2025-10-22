@@ -5,15 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { CreditCard, Shield, Lock } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CreditCard, Shield, Lock, AlertCircle } from "lucide-react";
 import { Elements, PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { apiRequest } from "@/lib/queryClient";
 
-if (!import.meta.env.VITE_STRIPE_PUBLIC_KEY) {
-  throw new Error("Missing required Stripe key: VITE_STRIPE_PUBLIC_KEY");
-}
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+// Conditionally load Stripe - app can still function without payment processing
+const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY
+  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
+  : null;
 
 function CheckoutForm() {
   const stripe = useStripe();
@@ -136,6 +137,40 @@ export default function BuyXRP() {
 
   if (!isAuthenticated) {
     return null;
+  }
+
+  // Check if Stripe is configured
+  if (!stripePromise) {
+    return (
+      <div className="p-6">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <div>
+            <h1 className="text-3xl font-bold mb-2">Buy XRP</h1>
+            <p className="text-muted-foreground">Purchase XRP with USD using your credit or debit card</p>
+          </div>
+
+          <Alert>
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Payment Processing Unavailable</AlertTitle>
+            <AlertDescription>
+              Stripe payment processing is not configured. To enable fiat on-ramp purchases, please configure the
+              VITE_STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY environment variables.
+            </AlertDescription>
+          </Alert>
+
+          <Card className="bg-accent/30">
+            <CardContent className="p-6">
+              <h3 className="font-semibold mb-3">Alternative Ways to Get XRP</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Trade other cryptocurrencies for XRP on the Markets page</li>
+                <li>• Transfer XRP from another wallet or exchange</li>
+                <li>• Contact support for assistance setting up payments</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
   }
 
   return (

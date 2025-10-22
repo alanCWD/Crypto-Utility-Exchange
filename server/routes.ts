@@ -6,12 +6,12 @@ import { setupAuth, isAuthenticated } from "./replitAuth";
 import { insertTransactionSchema, insertTradeSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
-}
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2023-10-16",
-});
+// Initialize Stripe only if secret key is available
+const stripe = process.env.STRIPE_SECRET_KEY
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2023-10-16",
+    })
+  : null;
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
@@ -146,8 +146,88 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Market data route - simulated data for MVP
+  app.get('/api/markets', async (req, res) => {
+    try {
+      // Simulated market data - in production this would come from XRPL or market data provider
+      const markets = [
+        {
+          id: "xrp-usd",
+          pair: "XRP/USD",
+          name: "XRP",
+          price: "0.5200",
+          change24h: "+2.4",
+          volume24h: "$1,234,567",
+          high24h: "0.5350",
+          low24h: "0.5080",
+        },
+        {
+          id: "xrp-usdt",
+          pair: "XRP/USDT",
+          name: "XRP",
+          price: "0.5198",
+          change24h: "+2.3",
+          volume24h: "$987,654",
+          high24h: "0.5340",
+          low24h: "0.5075",
+        },
+        {
+          id: "solo-xrp",
+          pair: "SOLO/XRP",
+          name: "Sologenic",
+          price: "0.0012",
+          change24h: "+5.2",
+          volume24h: "$45,678",
+          high24h: "0.0013",
+          low24h: "0.0011",
+        },
+        {
+          id: "core-xrp",
+          pair: "CORE/XRP",
+          name: "Coreum",
+          price: "0.0089",
+          change24h: "-1.2",
+          volume24h: "$23,456",
+          high24h: "0.0095",
+          low24h: "0.0085",
+        },
+        {
+          id: "rlusd-usd",
+          pair: "RLUSD/USD",
+          name: "Ripple USD",
+          price: "1.0001",
+          change24h: "+0.01",
+          volume24h: "$567,890",
+          high24h: "1.0005",
+          low24h: "0.9998",
+        },
+        {
+          id: "gala-xrp",
+          pair: "GALA/XRP",
+          name: "Gala Games",
+          price: "0.0045",
+          change24h: "+3.8",
+          volume24h: "$34,567",
+          high24h: "0.0048",
+          low24h: "0.0042",
+        },
+      ];
+      
+      res.json(markets);
+    } catch (error) {
+      console.error("Error fetching markets:", error);
+      res.status(500).json({ message: "Failed to fetch market data" });
+    }
+  });
+
   // Stripe payment route for fiat on-ramp
   app.post("/api/create-payment-intent", isAuthenticated, async (req: any, res) => {
+    if (!stripe) {
+      return res.status(503).json({ 
+        message: "Payment processing is not available. Please configure Stripe to enable fiat on-ramp." 
+      });
+    }
+
     try {
       const { amount } = req.body;
       const userId = req.user.claims.sub;
@@ -174,6 +254,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Webhook to handle successful payments
   app.post("/api/stripe-webhook", async (req, res) => {
+    if (!stripe) {
+      return res.status(503).json({ message: "Payment processing is not available" });
+    }
+
     try {
       const event = req.body;
 
