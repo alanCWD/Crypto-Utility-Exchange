@@ -16,12 +16,13 @@ A utility-first cryptocurrency trading platform with embedded educational contex
 1. **Authentication** - Replit Auth with session management
 2. **Trading Dashboard** - Real-time price charts, order book, buy/sell forms
 3. **Markets Overview** - 23 utility-focused cryptocurrencies with category filtering
-4. **Educational Context** - Tooltips and info cards explaining real-world use cases
-5. **Category Filtering** - Filter by DeFi, Storage, IoT, Enterprise, Layer-2, Payments, etc.
+4. **Educational Context** - Info icon tooltips on each crypto showing primaryUtility and useCaseDescription
+5. **Category Filtering** - 14 category filters (All, DeFi, Payments, Smart Contracts, Layer-2, Enterprise, Storage, IoT, Oracles, Interoperability, Stablecoins, Supply Chain, Computing, Exchange) with color-coded badges
 6. **Wallet Management** - View balances, transaction history
 7. **Fiat On-Ramp** - Buy crypto with USD via Stripe
 8. **Dark Mode** - Professional dark-first trading interface
 9. **Responsive Design** - Mobile-friendly layouts
+10. **Search & Filter** - Search by name/symbol/pair, filter by category simultaneously
 
 ## Database Schema
 - **users** - User accounts from Replit Auth
@@ -125,10 +126,59 @@ shared/
 3. Add automated UI/integration tests
 4. Deploy to production with proper session secrets
 
+## Utility-First Educational Platform Features
+### 23 Utility Cryptocurrencies
+All cryptocurrencies include educational metadata:
+- **Bitcoin (BTC)** - Payments: Digital currency for peer-to-peer transactions
+- **Ethereum (ETH)** - Smart Contracts: Decentralized applications and smart contracts
+- **Solana (SOL)** - Smart Contracts: High-speed transactions and DeFi applications
+- **XRP (XRP)** - Payments: Cross-border payments and remittances
+- **Chainlink (LINK)** - Oracles: Real-world data for smart contracts
+- **Hedera (HBAR)** - Enterprise: Enterprise-grade distributed ledger
+- **Polygon (MATIC)** - Layer-2: Ethereum scaling solution
+- **Cardano (ADA)** - Smart Contracts: Research-driven blockchain platform
+- **Stellar (XLM)** - Payments: Cross-border payments for financial institutions
+- **Filecoin (FIL)** - Storage: Decentralized file storage
+- **VeChain (VET)** - Supply Chain: Supply chain management and tracking
+- **IOTA (MIOTA)** - IoT: Machine-to-machine transactions
+- **Algorand (ALGO)** - DeFi: Pure proof-of-stake blockchain
+- **Tezos (XTZ)** - Smart Contracts: Self-amending blockchain
+- **Internet Computer (ICP)** - Computing: Decentralized internet and web services
+- **The Graph (GRT)** - Oracles: Indexing protocol for blockchain data
+- **Cosmos (ATOM)** - Interoperability: Blockchain interoperability
+- **Polkadot (DOT)** - Interoperability: Multi-chain network
+- **Avalanche (AVAX)** - DeFi: High-throughput smart contract platform
+- **Aave (AAVE)** - DeFi: Decentralized lending protocol
+- **Uniswap (UNI)** - DeFi: Decentralized exchange protocol
+- **USDT (USDT)** - Stablecoins: USD-pegged stablecoin
+- **Binance Coin (BNB)** - Exchange: Binance ecosystem utility token
+
+### Category System
+14 categories with color-coded badges:
+- **DeFi** (Purple) - Decentralized finance protocols
+- **Payments** (Green) - Cross-border and peer-to-peer payments
+- **Smart Contracts** (Blue) - Programmable blockchain platforms
+- **Layer-2** (Indigo) - Scaling solutions
+- **Enterprise** (Slate) - Enterprise blockchain solutions
+- **Storage** (Orange) - Decentralized file storage
+- **IoT** (Teal) - Internet of Things and machine-to-machine
+- **Oracles** (Yellow) - Real-world data integration
+- **Interoperability** (Pink) - Cross-chain communication
+- **Stablecoins** (Emerald) - Price-stable cryptocurrencies
+- **Supply Chain** (Amber) - Logistics and tracking
+- **Computing** (Violet) - Decentralized computing
+- **Exchange** (Gold) - Exchange ecosystem tokens
+
+### Educational Features
+- **Info Icon Tooltips**: Hover over any crypto to see full name, primary utility, and detailed use case
+- **Category Badges**: Color-coded category labels for quick identification
+- **Category Filtering**: Filter markets by specific use case category
+- **Search Integration**: Search works on filtered results
+
 ## Notes
 - MVP uses simulated market data for demonstration
-- 23 utility-focused cryptocurrencies covering DeFi, Storage, IoT, Enterprise, Layer-2, Oracles, and more
-- Educational tooltips and category badges help traders understand real-world use cases
+- Educational focus: Emphasizes real-world utility over speculation
+- Query structure: `["/api/markets", category]` with custom queryFn for proper filtering
 - Real blockchain integration planned for future phases
 - Focus on professional, trust-inspiring UI with embedded education
 - Gracefully handles missing Stripe configuration in development
