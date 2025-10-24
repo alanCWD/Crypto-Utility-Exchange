@@ -1,7 +1,7 @@
-# XRPL Exchange - Consumer Trading Platform
+# Utility Crypto Exchange - Educational Trading Platform
 
 ## Project Overview
-A consumer-facing centralized exchange (CEX)-style trading platform built for the XRP Ledger ecosystem. This addresses a key gap in the XRPL environment by providing a user-friendly platform for retail traders to trade XRP and XRPL tokens with fiat on-ramps.
+A utility-first cryptocurrency trading platform with embedded educational context. Unlike speculation-focused exchanges, this platform emphasizes trading cryptocurrencies that solve real-world problems across DeFi, storage, IoT, enterprise solutions, and more. Educational tooltips and category filters help traders make informed decisions based on actual utility and use cases.
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Tailwind CSS, Shadcn UI, Recharts
@@ -15,11 +15,13 @@ A consumer-facing centralized exchange (CEX)-style trading platform built for th
 ## Features Implemented
 1. **Authentication** - Replit Auth with session management
 2. **Trading Dashboard** - Real-time price charts, order book, buy/sell forms
-3. **Markets Overview** - View all XRPL tokens with 24h changes and volumes
-4. **Wallet Management** - View balances, transaction history
-5. **Fiat On-Ramp** - Buy XRP with USD via Stripe
-6. **Dark Mode** - Professional dark-first trading interface
-7. **Responsive Design** - Mobile-friendly layouts
+3. **Markets Overview** - 23 utility-focused cryptocurrencies with category filtering
+4. **Educational Context** - Tooltips and info cards explaining real-world use cases
+5. **Category Filtering** - Filter by DeFi, Storage, IoT, Enterprise, Layer-2, Payments, etc.
+6. **Wallet Management** - View balances, transaction history
+7. **Fiat On-Ramp** - Buy crypto with USD via Stripe
+8. **Dark Mode** - Professional dark-first trading interface
+9. **Responsive Design** - Mobile-friendly layouts
 
 ## Database Schema
 - **users** - User accounts from Replit Auth
@@ -29,12 +31,13 @@ A consumer-facing centralized exchange (CEX)-style trading platform built for th
 - **trades** - Buy/sell order history
 
 ## Design System
-- **Primary Color**: XRP Blue (hsl(218, 100%, 50%))
+- **Primary Color**: Platform Blue (hsl(218, 100%, 50%))
 - **Success/Buy**: Green (hsl(145, 80%, 42%))
 - **Destructive/Sell**: Red (hsl(0, 84%, 60%))
+- **Category Colors**: Purple (DeFi), Orange (Storage), Teal (IoT), etc.
 - **Dark Mode**: Default theme optimized for trading
 - **Typography**: Inter for UI, Roboto Mono for prices/numbers
-- **Components**: Shadcn UI with custom trading components
+- **Components**: Shadcn UI with custom trading components + educational tooltips
 
 ## Project Structure
 ```
@@ -124,7 +127,8 @@ shared/
 
 ## Notes
 - MVP uses simulated market data for demonstration
-- Real XRPL blockchain integration planned for future phases
-- All trading functionality designed for future blockchain connection
-- Focus on professional, trust-inspiring UI for retail traders
+- 23 utility-focused cryptocurrencies covering DeFi, Storage, IoT, Enterprise, Layer-2, Oracles, and more
+- Educational tooltips and category badges help traders understand real-world use cases
+- Real blockchain integration planned for future phases
+- Focus on professional, trust-inspiring UI with embedded education
 - Gracefully handles missing Stripe configuration in development

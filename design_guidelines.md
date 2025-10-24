@@ -1,14 +1,16 @@
-# Design Guidelines: XRPL Consumer Trading Platform
+# Design Guidelines: Utility Crypto Exchange
 
 ## Design Approach
 
-**Reference-Based Approach** - Drawing inspiration from leading centralized exchanges:
+**Utility-First Educational Trading Platform** - Drawing inspiration from leading centralized exchanges with an educational twist:
 - **Primary References**: Binance (information density + dark UI), Coinbase (clarity + trust), Kraken (professional aesthetic)
+- **Educational Focus**: Embed real-world use case information throughout the trading interface
 - **Key Principles**: 
-  - Information hierarchy: Critical trading data takes visual priority
+  - Information hierarchy: Critical trading data + utility context takes visual priority
   - Trust through professionalism: Clean, precise, institutional-grade appearance
-  - Efficiency over decoration: Every pixel serves a functional purpose
+  - Education meets efficiency: Subtle tooltips and cards explain what each crypto actually does
   - Dark-first design: Optimized for extended trading sessions
+  - Utility categories: Visual taxonomy (DeFi, Storage, IoT, Enterprise, Layer-2, etc.)
 
 ## Core Design Elements
 
@@ -21,10 +23,11 @@
 - Border Subtle: 15 5% 20% (dividers, card borders)
 
 **Brand & Accent Colors**
-- XRP Primary: 218 100% 50% (vibrant blue, XRP brand color)
+- Primary Blue: 218 100% 50% (vibrant blue, platform brand color)
 - Success/Buy: 145 80% 42% (green for positive values, buy buttons)
 - Danger/Sell: 0 84% 60% (red for negative values, sell buttons)
 - Warning: 38 92% 50% (amber for alerts)
+- Category Badges: Color-coded by utility type (DeFi=purple, Storage=orange, IoT=teal, etc.)
 
 **Text Hierarchy**
 - Primary Text: 0 0% 95% (high contrast, headings, prices)
@@ -71,15 +74,18 @@
 ### D. Component Library
 
 **Navigation & Header**
-- Top Navigation: Dark bar with XRP logo, global search, wallet balance, user avatar
-- Side Navigation: Market selector with search, favorites star icons, 24h change indicators
+- Top Navigation: Dark bar with "U" logo (Utility), global search, wallet balance, user avatar
+- Side Navigation: Market selector with category filters, search, favorites, 24h change indicators
 - Tab Navigation: Underline style with active accent color
+- Category Filters: Pill-style tabs for filtering by utility type (All, DeFi, Storage, IoT, etc.)
 
 **Trading Components**
 - Price Chart: TradingView-style with dark grid, green/red candles, volume bars below
 - Order Book: Two-column layout (bids left/green, asks right/red), depth visualization bars
-- Trade Form: Tabbed interface (Buy/Sell), input fields with XRP/USD toggle, percentage quick-select buttons (25%, 50%, 75%, 100%)
+- Trade Form: Tabbed interface (Buy/Sell), input fields with crypto/USD toggle, percentage quick-select buttons (25%, 50%, 75%, 100%)
 - Order History Table: Striped rows, monospace numbers, color-coded status badges
+- Educational Tooltips: Info icons next to crypto symbols revealing utility/use case on hover
+- Category Badges: Small pills showing crypto category (DeFi, Storage, etc.) with color coding
 
 **Cards & Panels**
 - Card Style: Subtle border (border-[#2a2a2a]), rounded-lg, background elevated
@@ -125,9 +131,10 @@
 ### F. Images
 
 **Hero Section (Landing/Marketing)**
-- Large hero image: Abstract visualization of blockchain network nodes with glowing XRP logo, 60vh height
+- Large hero image: Abstract visualization of blockchain network nodes representing utility cryptos, 60vh height
 - Overlay: Dark gradient (bottom to top) for text readability
 - Image style: Modern, tech-forward, blue-dominant color scheme
+- Messaging: "Trade Cryptocurrencies That Solve Real Problems" - emphasize utility over speculation
 
 **Dashboard (No Hero)**
 - Trading dashboard is pure functional UI, no decorative images
@@ -157,4 +164,4 @@
 - Simplified trade form with swipe gesture for buy/sell toggle
 - Pull-to-refresh for price updates
 
-This design creates a professional, trustworthy trading platform that bridges the gap in the XRPL ecosystem with a consumer-friendly CEX experience while maintaining the efficiency and clarity traders demand.
+This design creates a professional, educational trading platform focused on utility-first cryptocurrencies. By embedding real-world use case information throughout the interface via tooltips, category badges, and info cards, traders can make informed decisions based on actual utility rather than speculation alone. The design maintains the efficiency and clarity professional traders demand while adding an educational layer for those who want to understand what they're trading.

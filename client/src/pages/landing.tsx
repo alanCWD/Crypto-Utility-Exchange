@@ -38,9 +38,9 @@ export default function Landing() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">X</span>
+              <span className="text-primary-foreground font-bold text-lg">U</span>
             </div>
-            <span className="text-xl font-semibold">XRPL Exchange</span>
+            <span className="text-xl font-semibold">Utility Crypto Exchange</span>
           </div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -57,12 +57,12 @@ export default function Landing() {
         <div className="container relative mx-auto px-4 py-24 md:py-32">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight md:text-6xl mb-6">
-              Trade XRP & XRPL Tokens
-              <span className="block text-primary mt-2">Built for the Ecosystem</span>
+              Trade Cryptocurrencies That Solve Real Problems
+              <span className="block text-primary mt-2">Utility-First Trading Platform</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The first consumer-focused exchange built natively for the XRP Ledger. 
-              Spot trading, fiat on-ramps, and real-time market data.
+              Discover and trade utility-focused cryptocurrencies. Learn about real-world use cases
+              while accessing professional spot trading, fiat on-ramps, and real-time market data.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button size="lg" className="text-lg h-12 px-8" asChild data-testid="button-get-started">
@@ -97,9 +97,9 @@ export default function Landing() {
       <section className="py-24 bg-card/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why Choose XRPL Exchange?</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose Utility Crypto Exchange?</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Professional trading platform designed specifically for the XRP Ledger ecosystem
+              Trade smarter with educational context. Focus on cryptocurrencies solving real-world problems.
             </p>
           </div>
 
@@ -107,18 +107,18 @@ export default function Landing() {
             {[
               {
                 icon: <TrendingUp className="h-8 w-8" />,
-                title: "Spot Trading",
-                description: "Trade XRP/USD and XRP/USDT with real-time charts and order books",
+                title: "Utility-First Trading",
+                description: "Trade cryptos based on real-world use cases like DeFi, storage, IoT, and enterprise solutions",
               },
               {
                 icon: <DollarSign className="h-8 w-8" />,
                 title: "Fiat On-Ramp",
-                description: "Buy XRP directly with USD using credit or debit cards via Stripe",
+                description: "Buy crypto directly with USD using credit or debit cards via Stripe",
               },
               {
                 icon: <Zap className="h-8 w-8" />,
-                title: "Lightning Fast",
-                description: "Built on XRPL's 1,500+ TPS infrastructure for instant settlements",
+                title: "Educational Context",
+                description: "Learn what each cryptocurrency actually does while you trade",
               },
               {
                 icon: <Shield className="h-8 w-8" />,
@@ -142,7 +142,7 @@ export default function Landing() {
           <Card className="max-w-4xl mx-auto p-12 text-center bg-gradient-to-br from-primary/10 to-background border-primary/20">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Trading?</h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of traders already using XRPL Exchange to trade XRP and XRPL tokens
+              Join traders who prioritize utility. Trade cryptocurrencies solving real-world problems.
             </p>
             <Button size="lg" className="text-lg h-12 px-8" asChild data-testid="button-cta-signup">
               <a href="/api/login">Create Free Account</a>
@@ -157,12 +157,12 @@ export default function Landing() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="h-6 w-6 rounded bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">X</span>
+                <span className="text-primary-foreground font-bold text-sm">U</span>
               </div>
-              <span className="font-semibold">XRPL Exchange</span>
+              <span className="font-semibold">Utility Crypto Exchange</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2025 XRPL Exchange. Built for the XRP Ledger ecosystem.
+              © 2025 Utility Crypto Exchange. Trade cryptocurrencies that solve real problems.
             </p>
           </div>
         </div>

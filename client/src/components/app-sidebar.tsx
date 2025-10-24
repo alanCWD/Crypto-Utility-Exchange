@@ -33,7 +33,7 @@ const menuItems = [
     icon: Wallet,
   },
   {
-    title: "Buy XRP",
+    title: "Buy Crypto",
     url: "/buy",
     icon: DollarSign,
   },
@@ -48,9 +48,9 @@ export function AppSidebar() {
       <SidebarHeader className="p-4 border-b border-sidebar-border">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">X</span>
+            <span className="text-primary-foreground font-bold text-lg">U</span>
           </div>
-          <span className="text-lg font-semibold">XRPL Exchange</span>
+          <span className="text-lg font-semibold">Utility Crypto</span>
         </div>
       </SidebarHeader>
       
