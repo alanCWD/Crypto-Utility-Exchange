@@ -15,7 +15,7 @@ A utility-first cryptocurrency trading platform with embedded educational contex
 ## Features Implemented
 1. **Authentication** - Replit Auth with session management
 2. **Trading Dashboard** - Real-time price charts, order book, buy/sell forms
-3. **Markets Overview** - 23 utility-focused cryptocurrencies with category filtering
+3. **Markets Overview** - 32 utility-focused cryptocurrencies with category filtering
 4. **Educational Context** - Info icon tooltips on each crypto showing primaryUtility and useCaseDescription
 5. **Category Filtering** - 14 category filters (All, DeFi, Payments, Smart Contracts, Layer-2, Enterprise, Storage, IoT, Oracles, Interoperability, Stablecoins, Supply Chain, Computing, Exchange) with color-coded badges
 6. **Wallet Management** - View balances, transaction history
@@ -127,31 +127,53 @@ shared/
 4. Deploy to production with proper session secrets
 
 ## Utility-First Educational Platform Features
-### 23 Utility Cryptocurrencies
-All cryptocurrencies include educational metadata:
-- **Bitcoin (BTC)** - Payments: Digital currency for peer-to-peer transactions
-- **Ethereum (ETH)** - Smart Contracts: Decentralized applications and smart contracts
-- **Solana (SOL)** - Smart Contracts: High-speed transactions and DeFi applications
-- **XRP (XRP)** - Payments: Cross-border payments and remittances
+### 32 Utility Cryptocurrencies (2025)
+All cryptocurrencies include educational metadata with real-world use cases:
+
+**Top Tier (Established Utility)**:
+- **Bitcoin (BTC)** - Payments: Digital currency & store of value
+- **Ethereum (ETH)** - Smart Contracts: Foundation of DeFi, NFTs, and tokenized assets
+- **Solana (SOL)** - DeFi: High-speed dApps, payments, and NFTs
+- **XRP (XRP)** - Payments: Cross-border banking via RippleNet
+- **Binance Coin (BNB)** - Exchange: Ecosystem utility and transaction fees
+- **Tether (USDT)** - Stablecoins: Most widely used stablecoin for settlements
+- **USD Coin (USDC)** - Stablecoins: Regulated stablecoin for digital payments
+
+**DeFi & Smart Contracts**:
+- **Cardano (ADA)** - Smart Contracts: Digital identity and governance
+- **Polygon (MATIC)** - Layer-2: Ethereum scaling via sidechains
+- **Avalanche (AVAX)** - Enterprise: RWA tokenization and on-chain settlement
+- **Algorand (ALGO)** - Enterprise: CBDCs and government projects
+- **TRON (TRX)** - Smart Contracts: Decentralized content and payments
+- **Sui (SUI)** - Smart Contracts: High-performance gaming and DeFi
+- **Ethena (ENA)** - DeFi: Synthetic dollar platform with stable yield
+- **Lukso (LYX)** - DeFi: Digital identity for creative economies
+- **Velo (VELO)** - DeFi: Cross-chain payments and settlements
+
+**Interoperability & Oracles**:
 - **Chainlink (LINK)** - Oracles: Real-world data for smart contracts
-- **Hedera (HBAR)** - Enterprise: Enterprise-grade distributed ledger
-- **Polygon (MATIC)** - Layer-2: Ethereum scaling solution
-- **Cardano (ADA)** - Smart Contracts: Research-driven blockchain platform
-- **Stellar (XLM)** - Payments: Cross-border payments for financial institutions
-- **Filecoin (FIL)** - Storage: Decentralized file storage
-- **VeChain (VET)** - Supply Chain: Supply chain management and tracking
-- **IOTA (MIOTA)** - IoT: Machine-to-machine transactions
-- **Algorand (ALGO)** - DeFi: Pure proof-of-stake blockchain
-- **Tezos (XTZ)** - Smart Contracts: Self-amending blockchain
-- **Internet Computer (ICP)** - Computing: Decentralized internet and web services
-- **The Graph (GRT)** - Oracles: Indexing protocol for blockchain data
-- **Cosmos (ATOM)** - Interoperability: Blockchain interoperability
-- **Polkadot (DOT)** - Interoperability: Multi-chain network
-- **Avalanche (AVAX)** - DeFi: High-throughput smart contract platform
-- **Aave (AAVE)** - DeFi: Decentralized lending protocol
-- **Uniswap (UNI)** - DeFi: Decentralized exchange protocol
-- **USDT (USDT)** - Stablecoins: USD-pegged stablecoin
-- **Binance Coin (BNB)** - Exchange: Binance ecosystem utility token
+- **Polkadot (DOT)** - Interoperability: Multi-chain communication
+- **Cosmos (ATOM)** - Interoperability: IBC cross-chain protocol
+- **Flare (FLR)** - Interoperability: Smart contracts for non-contract chains
+
+**Enterprise & Infrastructure**:
+- **Hedera (HBAR)** - Enterprise: Supply chain, carbon credits, identity
+- **Internet Computer (ICP)** - Computing: Backend apps running on-chain
+- **VeChain (VET)** - Supply Chain: Goods authentication and logistics
+
+**Payments & Digital Cash**:
+- **Litecoin (LTC)** - Payments: Fast digital cash with proven track record
+- **Stellar (XLM)** - Payments: Remittances for financial institutions
+- **Dogecoin (DOGE)** - Payments: Tipping and micro-payments
+
+**Storage & Data**:
+- **Filecoin (FIL)** - Storage: Verifiable decentralized file storage
+- **Arweave (AR)** - Storage: Permanent web archiving
+
+**IoT & Physical Networks**:
+- **Helium (HNT)** - IoT: Decentralized wireless network
+- **Hivemapper (HONEY)** - IoT: Crowdsourced global mapping
+- **DIMO** - IoT: Vehicle data ownership and monetization
 
 ### Category System
 14 categories with color-coded badges:
