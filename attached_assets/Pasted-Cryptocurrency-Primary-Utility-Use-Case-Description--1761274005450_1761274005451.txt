@@ -1,0 +1,25 @@
+Cryptocurrency           |  Primary Utility                    |  Use Case Description                                                
+-------------------------+-------------------------------------+----------------------------------------------------------------------
+Bitcoin (BTC)            |  Digital currency & store of value  |  Peer-to-peer payments powered by the Lightning Network              
+Ethereum (ETH)           |  Smart contracts                    |  Foundation of DeFi, NFTs, and tokenized assets                      
+Solana (SOL)             |  High-speed dApps & payments        |  Used for DeFi, retail payments, and NFTs (e.g., Shopify integration)
+XRP (Ripple)             |  Cross-border banking               |  Used for international transfers via RippleNet                      
+Chainlink (LINK)         |  Data oracles                       |  Connects blockchains with real-world data for DeFi and tokenization 
+Hedera (HBAR)            |  Enterprise-grade DLT               |  Used in supply chain, carbon credits, and identity management       
+Polygon (MATIC)          |  Layer-2 scaling                    |  Scales Ethereum via sidechains and zk rollups                       
+Cardano (ADA)            |  Smart contract protocol            |  Used for digital identity and governance in Africa                  
+Avalanche (AVAX)         |  Enterprise blockchain              |  Supports RWA tokenization and on-chain settlement                   
+Algorand (ALGO)          |  Fintech infrastructure             |  Supports CBDCs and government projects                              
+BNB (Binance Coin)       |  Exchange utility                   |  Used for transaction fees and ecosystem dApps                       
+Polkadot (DOT)           |  Interoperability network           |  Enables communication among different blockchains                   
+Cosmos (ATOM)            |  Blockchain interoperability        |  Provides cross-chain communication with IBC protocol                
+Chain (XCN)              |  Institutional DeFi                 |  Serves enterprise blockchain APIs                                   
+VeChain (VET)            |  Supply chain tracing               |  Tracks goods authenticity and logistics                             
+Internet Computer (ICP)  |  Decentralized computing            |  Runs backend apps and smart contracts natively on-chain             
+Helium (HNT)             |  IoT network                        |  Decentralized telecom data network                                  
+Hivemapper (HONEY)       |  Mapping infrastructure             |  Crowdsourced global map with real-world data                        
+DIMO                     |  Vehicle data ownership             |  Lets drivers earn crypto for sharing telemetry data                 
+Filecoin (FIL)           |  Decentralized file storage         |  Hosts verifiable data storage                                       
+Arweave (AR)             |  Permanent web storage              |  Used for long-term data archiving                                   
+ENA (Ethena)             |  Synthetic dollar platform          |  Provides stable yield-backed synthetic assets                       
+USDC (USD Coin)          |  Regulated stablecoin               |  Used for digital payments and remittances                           
