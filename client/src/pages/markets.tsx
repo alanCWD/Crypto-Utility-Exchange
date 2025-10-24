@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, TrendingDown, Search, Info } from "lucide-react";
+import { TrendingUp, TrendingDown, Search, Info, Radio } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Tooltip,
@@ -69,7 +69,7 @@ export default function Markets() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch market data with category filter
-  const { data: markets, isLoading: marketsLoading, error } = useQuery<Market[]>({
+  const { data: markets, isLoading: marketsLoading, error, dataUpdatedAt } = useQuery<Market[]>({
     queryKey: ["/api/markets", selectedCategory],
     queryFn: async () => {
       const url = selectedCategory !== "All"
@@ -128,11 +128,31 @@ export default function Markets() {
     market.pair.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Format last updated timestamp
+  const lastUpdated = dataUpdatedAt ? new Date(dataUpdatedAt).toLocaleTimeString() : "";
+
   return (
     <div className="p-6 space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">Utility Crypto Markets</h1>
-        <p className="text-muted-foreground">Discover and trade cryptocurrencies solving real-world problems</p>
+      <div className="flex items-start justify-between">
+        <div>
+          <div className="flex items-center gap-3 mb-2">
+            <h1 className="text-3xl font-bold">Utility Crypto Markets</h1>
+            <Badge 
+              variant="outline" 
+              className="bg-green-500/10 text-green-400 border-green-500/30 animate-pulse"
+              data-testid="badge-live-prices"
+            >
+              <Radio className="h-3 w-3 mr-1" />
+              Live Prices
+            </Badge>
+          </div>
+          <p className="text-muted-foreground">Discover and trade cryptocurrencies solving real-world problems</p>
+        </div>
+        {lastUpdated && (
+          <div className="text-sm text-muted-foreground" data-testid="text-last-updated">
+            Last updated: {lastUpdated}
+          </div>
+        )}
       </div>
 
       {/* Category Filters */}

@@ -5,6 +5,7 @@ import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import { insertTransactionSchema, insertTradeSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { getKrakenTickers, getPriceDataForSymbol } from "./kraken";
 
 // Initialize Stripe only if secret key is available
 const stripe = process.env.STRIPE_SECRET_KEY
@@ -146,12 +147,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Market data route - simulated utility-focused crypto data
+  // Market data route - live prices from Kraken with educational metadata
   app.get('/api/markets', async (req, res) => {
     try {
       const category = req.query.category as string | undefined;
       
+      // Fetch live data from Kraken (cached for 30 seconds)
+      const krakenData = await getKrakenTickers();
+      
       // 32 utility-focused cryptocurrencies with educational metadata
+      // Prices are live from Kraken when available, fallback to simulated data
       const allMarkets = [
         {
           id: "btc-usd",
@@ -603,10 +608,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
         },
       ];
 
+      // Merge live Kraken data with educational metadata
+      const marketsWithLiveData = allMarkets.map(market => {
+        const liveData = getPriceDataForSymbol(market.symbol, krakenData);
+        
+        if (liveData) {
+          return {
+            ...market,
+            price: liveData.price,
+            change24h: liveData.change24h,
+            volume24h: liveData.volume24h,
+            high24h: liveData.high24h,
+            low24h: liveData.low24h,
+          };
+        }
+        
+        // Return with simulated data if Kraken data unavailable
+        return market;
+      });
+
       // Filter by category if provided
       const markets = category && category !== "All"
-        ? allMarkets.filter(m => m.category === category)
-        : allMarkets;
+        ? marketsWithLiveData.filter(m => m.category === category)
+        : marketsWithLiveData;
       
       res.json(markets);
     } catch (error) {
