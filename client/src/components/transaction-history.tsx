@@ -104,17 +104,17 @@ export function TransactionHistory({
             displayTransactions.map((tx) => (
               <div
                 key={tx.id}
-                className="flex items-center gap-4 p-4 hover:bg-accent/50 transition-colors"
+                className="flex items-center gap-6 px-6 py-4"
                 data-testid={`transaction-${tx.id}`}
               >
                 <div className="flex-shrink-0">{getTypeIcon(tx.type)}</div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-medium text-sm">{getTypeLabel(tx.type)}</div>
+                  <div className="font-medium text-sm mb-1">{getTypeLabel(tx.type)}</div>
                   <div className="text-xs text-muted-foreground">
                     {format(tx.timestamp, "MMM d, yyyy 'at' h:mm a")}
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="text-right flex flex-col items-end gap-2">
                   <div className="font-mono font-semibold text-sm">
                     {tx.type === "sell" ? "-" : "+"}
                     {tx.amount} {tx.currency}
