@@ -43,11 +43,11 @@ export function OrderBook() {
           {asks.map((ask, i) => (
             <div
               key={`ask-${i}`}
-              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover-elevate transition-colors"
+              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono"
               data-testid={`order-ask-${i}`}
             >
-              <div className="text-destructive">{ask.price}</div>
-              <div className="text-right text-foreground">{ask.amount}</div>
+              <div className="text-destructive font-medium">{ask.price}</div>
+              <div className="text-right">{ask.amount}</div>
               <div className="text-right text-muted-foreground">{ask.total}</div>
             </div>
           ))}
@@ -68,11 +68,11 @@ export function OrderBook() {
           {bids.map((bid, i) => (
             <div
               key={`bid-${i}`}
-              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover-elevate transition-colors"
+              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono"
               data-testid={`order-bid-${i}`}
             >
-              <div className="text-success">{bid.price}</div>
-              <div className="text-right text-foreground">{bid.amount}</div>
+              <div className="text-success font-medium">{bid.price}</div>
+              <div className="text-right">{bid.amount}</div>
               <div className="text-right text-muted-foreground">{bid.total}</div>
             </div>
           ))}
