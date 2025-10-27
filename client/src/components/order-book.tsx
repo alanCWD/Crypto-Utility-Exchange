@@ -43,15 +43,12 @@ export function OrderBook() {
           {asks.map((ask, i) => (
             <div
               key={`ask-${i}`}
-              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover:bg-accent/50 transition-colors relative"
+              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover-elevate transition-colors"
+              data-testid={`order-ask-${i}`}
             >
-              <div
-                className="absolute inset-0 bg-destructive/10"
-                style={{ width: `${(parseFloat(ask.total) / 6000) * 100}%` }}
-              />
-              <div className="text-destructive relative z-10">{ask.price}</div>
-              <div className="text-right relative z-10">{ask.amount}</div>
-              <div className="text-right relative z-10">{ask.total}</div>
+              <div className="text-destructive">{ask.price}</div>
+              <div className="text-right text-foreground">{ask.amount}</div>
+              <div className="text-right text-muted-foreground">{ask.total}</div>
             </div>
           ))}
         </div>
@@ -71,15 +68,12 @@ export function OrderBook() {
           {bids.map((bid, i) => (
             <div
               key={`bid-${i}`}
-              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover:bg-accent/50 transition-colors relative"
+              className="grid grid-cols-3 gap-2 px-4 py-1.5 text-xs font-mono hover-elevate transition-colors"
+              data-testid={`order-bid-${i}`}
             >
-              <div
-                className="absolute inset-0 bg-success/10"
-                style={{ width: `${(parseFloat(bid.total) / 6000) * 100}%` }}
-              />
-              <div className="text-success relative z-10">{bid.price}</div>
-              <div className="text-right relative z-10">{bid.amount}</div>
-              <div className="text-right relative z-10">{bid.total}</div>
+              <div className="text-success">{bid.price}</div>
+              <div className="text-right text-foreground">{bid.amount}</div>
+              <div className="text-right text-muted-foreground">{bid.total}</div>
             </div>
           ))}
         </div>
