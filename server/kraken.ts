@@ -20,7 +20,7 @@ interface KrakenTickerResponse {
 }
 
 // Mapping from our symbols to Kraken pair names
-// Note: 28 out of 32 cryptos have live Kraken data. Missing pairs fallback to simulated prices.
+// Note: 29 out of 33 cryptos have live Kraken data. Missing pairs fallback to simulated prices.
 // Unavailable on Kraken (as of 2025): 
 //   - LYX (Lukso): Not listed on Kraken
 //   - VELO (Velo): Not listed on Kraken
@@ -39,11 +39,12 @@ const KRAKEN_PAIR_MAP: Record<string, string> = {
   
   // DeFi & Smart Contracts
   "ADA": "ADAUSD",
-  "MATIC": "MATICUSD",
+  "POL": "POLUSD",   // Polygon rebranded MATIC → POL in 2024
   "AVAX": "AVAXUSD",
   "ALGO": "ALGOUSD",
   "TRX": "TRXUSD",
   "SUI": "SUIUSD",
+  "APT": "APTUSD",  // Aptos - SEC-approved Layer 1 smart contract platform
   "ENA": "ENAUSD",  // Ethena - available on Kraken
   
   // Interoperability & Oracles

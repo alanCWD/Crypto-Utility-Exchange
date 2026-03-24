@@ -15,7 +15,7 @@ A utility-first cryptocurrency trading platform with embedded educational contex
 ## Features Implemented
 1. **Authentication** - Replit Auth with session management
 2. **Trading Dashboard** - Real-time price charts, order book, buy/sell forms
-3. **Markets Overview** - 32 utility-focused cryptocurrencies with category filtering
+3. **Markets Overview** - 33 utility-focused cryptocurrencies with category filtering
 4. **Educational Context** - Info icon tooltips on each crypto showing primaryUtility and useCaseDescription
 5. **Category Filtering** - 14 category filters (All, DeFi, Payments, Smart Contracts, Layer-2, Enterprise, Storage, IoT, Oracles, Interoperability, Stablecoins, Supply Chain, Computing, Exchange) with color-coded badges
 6. **Wallet Management** - View balances, transaction history
